@@ -23,7 +23,8 @@ def regressToMean(numFlips, numTrials):
     #Find trials with extreme results and for each the next trial
     extremes, nextTrials = [], []
     for i in range(len(fracHeads) - 1):
-        if fracHeads[i] < 0.33 or fracHeads[i] > 0.66:
+        #or fracHeads[i] > 0.0
+        if fracHeads[i] > 0.8:
             extremes.append(fracHeads[i])
             nextTrials.append(fracHeads[i+1])
     #Plot results
@@ -39,4 +40,4 @@ def regressToMean(numFlips, numTrials):
     pylab.title('Regression to the Mean')
     pylab.legend(loc = 'best')
 
-regressToMean(15, 40)
+regressToMean(15, 4000)

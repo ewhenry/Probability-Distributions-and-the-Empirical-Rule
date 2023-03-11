@@ -4,6 +4,7 @@ Created on Thu Jan 17 09:51:52 2019
 
 @author: Kerri Norton
 """
+from math import sqrt
 import random
 import pylab
 
@@ -12,12 +13,16 @@ vals = []
 def variance(X):
     """Assumes that X is a list of numbers.
        Returns the standard deviation of X"""
-    
+    m = sum(X) / len(X)
+    new_input = []
+    for i in X:
+        new_input.append((i - m)**2)
+    return sum(new_input) / len(X)
     
 def stdDev(X):
     """Assumes that X is a list of numbers.
        Returns the standard deviation of X"""
-    
+    return sqrt(variance(X))
 
 
 def flip(numFlips):

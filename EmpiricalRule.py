@@ -30,4 +30,5 @@ def checkEmpirical(numTrials):
             print('  Fraction within', numStd, 'std =',
                   round(area, 4))
 
+print(scipy.integrate.quad(gaussian, -3, 3, (0,1))[0])
 checkEmpirical(2)
